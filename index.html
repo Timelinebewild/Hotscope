@@ -42,12 +42,40 @@ video {
   object-fit: contain;
 }
 
-/* Native banner bawah video */
+/* Button Directlink */
+.cta-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 14px 16px;
+  background: #000;
+}
+
+.cta-btn {
+  width: 100%;
+  max-width: 360px;
+  padding: 14px 0;
+  text-align: center;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+
+.cta-btn:active {
+  opacity: 0.9;
+}
+
+/* Native banner bawah */
 .native-banner {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 14px 0 20px;
+  padding: 16px 0 22px;
   background: #000;
 }
 </style>
@@ -85,7 +113,12 @@ video {
     </video>
   </div>
 
-  <!-- NATIVE BANNER BAWAH VIDEO -->
+  <!-- BUTTON DIRECTLINK (1x CLICK ONLY) -->
+  <div class="cta-wrap">
+    <div class="cta-btn" id="directBtn">Continue Watching</div>
+  </div>
+
+  <!-- NATIVE BANNER BAWAH -->
   <div class="native-banner">
     <script async="async" data-cfasync="false"
       src="https://possessedannihilation.com/bdf64b4672ad9470a124bb92c166a153/invoke.js">
@@ -112,6 +145,20 @@ video {
   const player = document.getElementById("player");
   document.getElementById("videoSource").src = video;
   player.load();
+})();
+</script>
+
+<!-- DIRECTLINK LOGIC (SAFE: 1 CLICK = 1 OPEN) -->
+<script>
+(function () {
+  const url = "https://possessedannihilation.com/yym1xdpt?key=92054b506280440e64f94cf931dcd23b";
+  let clicked = false;
+
+  document.getElementById("directBtn").addEventListener("click", function () {
+    if (clicked) return;
+    clicked = true;
+    window.open(url, "_blank");
+  });
 })();
 </script>
 
