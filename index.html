@@ -11,7 +11,6 @@ html, body {
   padding: 0;
   background: #000;
   font-family: Arial, Helvetica, sans-serif;
-  user-select: none;
 }
 
 .page {
@@ -19,15 +18,16 @@ html, body {
   background: #000;
 }
 
-/* Banner wrapper */
+/* Banner Top */
 .banner {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 12px 0;
+  padding: 10px 0;
   background: #000;
 }
 
+/* Video */
 .video-box {
   width: 100%;
   display: flex;
@@ -38,33 +38,37 @@ html, body {
 video {
   width: 100%;
   max-height: 78vh;
-  object-fit: contain;
   background: #000;
-  pointer-events: auto;
+  object-fit: contain;
 }
 
-* {
-  -webkit-tap-highlight-color: transparent;
+/* Native banner bawah video */
+.native-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 14px 0 20px;
+  background: #000;
 }
 </style>
 </head>
 
-<body oncontextmenu="return false">
+<body>
 
 <div class="page">
 
   <!-- BANNER TOP 320x50 -->
   <div class="banner">
     <script>
-  atOptions = {
-    'key' : '8812f0627e60cf59413c761a9825bca2',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://possessedannihilation.com/8812f0627e60cf59413c761a9825bca2/invoke.js"></script>
+      atOptions = {
+        'key' : 'd80bfd757b025a872ace2ea44d5b9c0d',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script src="https://possessedannihilation.com/d80bfd757b025a872ace2ea44d5b9c0d/invoke.js"></script>
   </div>
 
   <!-- VIDEO -->
@@ -72,20 +76,26 @@ video {
     <video id="player"
       controls
       autoplay
+      muted
       playsinline
       preload="metadata"
-      controlslist="nodownload nofullscreen noremoteplayback"
-      disablepictureinpicture
-      ondragstart="return false"
     >
       <source id="videoSource" src="" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
 
+  <!-- NATIVE BANNER BAWAH VIDEO -->
+  <div class="native-banner">
+    <script async="async" data-cfasync="false"
+      src="https://possessedannihilation.com/bdf64b4672ad9470a124bb92c166a153/invoke.js">
+    </script>
+    <div id="container-bdf64b4672ad9470a124bb92c166a153"></div>
+  </div>
+
 </div>
 
-<!-- AUTO LOAD VIDEO DARI PARAMETER ?v= -->
+<!-- LOAD VIDEO DARI ?v= -->
 <script>
 (function () {
   const params = new URLSearchParams(window.location.search);
@@ -95,27 +105,20 @@ video {
     if (!video.startsWith("http")) {
       video = "https://cdn.videy.co/" + video;
     }
-    document.getElementById("videoSource").src = video;
   } else {
-    document.getElementById("videoSource").src = "https://cdn.videy.co/QCY4wUNX1.mp4";
+    video = "https://cdn.videy.co/QCY4wUNX1.mp4";
   }
 
-  document.getElementById("player").load();
+  const player = document.getElementById("player");
+  document.getElementById("videoSource").src = video;
+  player.load();
 })();
 </script>
 
-<!-- PROTEKSI BASIC -->
+<!-- PROTEKSI RINGAN -->
 <script>
-(function () {
-  document.addEventListener("contextmenu", e => e.preventDefault());
-  document.addEventListener("dragstart", e => e.preventDefault());
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "F12") e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) e.preventDefault();
-    if (e.ctrlKey && ["U","S","P"].includes(e.key.toUpperCase())) e.preventDefault();
-  });
-})();
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("dragstart", e => e.preventDefault());
 </script>
 
 </body>
