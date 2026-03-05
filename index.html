@@ -40,30 +40,7 @@ video {
   display: block;
 }
 
-/* PREMIUM CTA */
-.cta-wrap {
-  padding: 16px;
-}
-
-.cta-btn {
-  width: 100%;
-  padding: 18px 0;
-  text-align: center;
-  background: linear-gradient(135deg, #2563eb, #1e3a8a);
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 14px;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(37,99,235,0.5);
-  transition: all 0.2s ease;
-}
-
-.cta-btn:active {
-  transform: scale(0.97);
-}
-
-/* FIXED 300 BANNER */
+/* 300 BANNER */
 .banner-300 {
   display: flex;
   justify-content: center;
@@ -103,14 +80,7 @@ video {
     </video>
   </div>
 
-  <!-- PREMIUM BUTTON -->
-  <div class="cta-wrap">
-    <div class="cta-btn" id="directBtn">
-      🔓 Watch Full Video
-    </div>
-  </div>
-
-  <!-- 300x250 BANNER FIX -->
+  <!-- 300x250 BANNER -->
   <div class="banner-300">
     <script>
       atOptions = {
@@ -141,19 +111,6 @@ video {
 
   document.getElementById("videoSource").src = video;
   document.getElementById("player").load();
-})();
-</script>
-
-<script>
-(function () {
-  const url = "https://possessedannihilation.com/yym1xdpt?key=92054b506280440e64f94cf931dcd23b";
-  let clicked = false;
-
-  document.getElementById("directBtn").addEventListener("click", function () {
-    if (clicked) return;
-    clicked = true;
-    window.open(url, "_blank");
-  });
 })();
 </script>
 
